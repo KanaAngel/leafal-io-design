@@ -1,13 +1,139 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!-- Copyright (c) 2021, Morgan Hofmmann - All rights to this concept are reserved. -->
+    <!-- Copyright (c) 2021, Morgan Hofmann - All rights to this concept are reserved. -->
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>leafal.io</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="nav-bar">
 
+    </div>
+
+    <div class="container">
+      <div id="storefront">
+        <script type="text/javascript">
+          var slideIndex = -1;
+
+          function featuredNextSlide() {
+            var slides = document.querySelectorAll("#storefront .storefront-featured .slide");
+
+            slideIndex++;
+            if (slideIndex > slides.length - 1) slideIndex = 0;
+
+            slides.forEach((element) => {
+              element.classList.remove("active");
+            });
+
+            document.querySelectorAll("#storefront .storefront-featured .slide-select").forEach((element) => {
+              element.classList.remove("active");
+            });
+
+            var selector = document.querySelector(`#storefront .storefront-featured .slide-select[data-index="${slideIndex}"]`);
+
+            slides[slideIndex].classList.add("active");
+            selector.classList.add("active");
+          }
+
+          window.onload = () => {
+            setInterval(() => { featuredNextSlide(); }, 5000);
+            featuredNextSlide();
+          };
+        </script>
+
+        <div class="main-wrapper">
+          <div class="storefront-featured">
+            <div class="slides">
+              <div class="slide">
+                <div class="background">
+                  <img src="https://pbs.twimg.com/profile_banners/1191455979247943687/1632066820/1500x500" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/arcturus.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-eventide.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-starcall.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-overdrive.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+            </div>
+            <div class="slide-selector">
+              <div class="slide-select" data-index="0">
+                <div class="background">
+                  <img src="https://pbs.twimg.com/profile_banners/1191455979247943687/1632066820/1500x500" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide-select" data-index="1">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/arcturus.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide-select" data-index="2">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-eventide.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide-select" data-index="3">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-starcall.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+              <div class="slide-select" data-index="4">
+                <div class="background">
+                  <img src="https://www.leafal.io/assets/img/events/cover/lye-overdrive.jpg" alt="">
+                </div>
+                <div class="overlay">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
