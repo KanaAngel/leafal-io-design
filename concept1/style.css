@@ -74,6 +74,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 #storefront .storefront-featured .slide-select::before {
@@ -106,7 +107,7 @@ body {
   opacity: 0.5;
 }
 
-#storefront .storefront-featured .slide-select .background img {
+#storefront .storefront-featured .slide-select .background .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -123,7 +124,7 @@ body {
   background-color: #222;
 }
 
-#storefront .storefront-featured .slide .background img {
+#storefront .storefront-featured .slide .background .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -131,7 +132,7 @@ body {
   transition: opacity .5s ease;
 }
 
-#storefront .storefront-featured .slide.active .background img {
+#storefront .storefront-featured .slide.active .background .image {
   animation: featured-img-pan 5s ease 0s 1 normal forwards;
   opacity: 1;
 }
