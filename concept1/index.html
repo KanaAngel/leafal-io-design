@@ -21,9 +21,65 @@
 
     <div class="container">
       <div id="storefront">
+        <div class="main-wrapper">
+          <div class="storefront-featured">
+            <div class="slides" id="slides-container">
+
+            </div>
+            <div class="slide-selector" id="slide-select-container">
+            </div>
+          </div>
+        </div>
+
         <script type="text/javascript">
           var slideIndex = -1;
           var slideInterval;
+
+          var slideTemplate = `
+            <div class="slide">
+              <div class="background">
+                <div class="image" style="background-color:%color%;"></div>
+              </div>
+              <div class="overlay">
+
+              </div>
+            </div>
+          `;
+
+          var slideSelectTemplate = `
+            <div class="slide-select" data-index="%i%">
+              <div class="background">
+                <div class="image" style="background-color:%color%;"></div>
+              </div>
+              <div class="overlay">
+
+              </div>
+            </div>
+          `;
+
+          var slides = [
+            { color: "#c00" },
+            { color: "#0c0" },
+            { color: "#00c" },
+            { color: "#cc0" },
+            { color: "#c0c" },
+          ];
+
+          function injectSlides() {
+            slides.forEach((item, i) => {
+              const t = document.createElement('template');
+              var temp = slideTemplate.replace(/%color%/g, item.color);
+              t.innerHTML = temp;
+
+              document.getElementById("slides-container").appendChild(t.content.cloneNode(true));
+
+              const t2 = document.createElement('template');
+              var temp2 = slideSelectTemplate.replace(/%color%/g, item.color).replace(/%i%/g, i);
+              t2.innerHTML = temp2;
+
+              document.getElementById("slide-select-container").appendChild(t2.content.cloneNode(true));
+            });
+          }
 
           function featuredNextSlide() {
             var slides = document.querySelectorAll("#storefront .storefront-featured .slide");
@@ -45,7 +101,7 @@
             selector.classList.add("active");
           }
 
-          window.onload = () => {
+          function prepareSlides() {
             slideInterval = setInterval(() => { featuredNextSlide(); }, 5000);
             featuredNextSlide();
 
@@ -61,97 +117,14 @@
                 featuredNextSlide();
               });
             });
+          }
+
+          window.onload = () => {
+            prepareSlides();
           };
+
+          injectSlides();
         </script>
-
-        <div class="main-wrapper">
-          <div class="storefront-featured">
-            <div class="slides">
-              <div class="slide">
-                <div class="background">
-                  <div class="image" style="background-color:#c00;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide">
-                <div class="background">
-                  <div class="image" style="background-color:#0c0;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide">
-                <div class="background">
-                  <div class="image" style="background-color:#00c;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide">
-                <div class="background">
-                  <div class="image" style="background-color:#c0c;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide">
-                <div class="background">
-                  <div class="image" style="background-color:#cc0;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-            </div>
-            <div class="slide-selector">
-              <div class="slide-select" data-index="0">
-                <div class="background">
-                  <div class="image" style="background-color:#c00;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide-select" data-index="1">
-                <div class="background">
-                  <div class="image" style="background-color:#0c0;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide-select" data-index="2">
-                <div class="background">
-                  <div class="image" style="background-color:#00c;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide-select" data-index="3">
-                <div class="background">
-                  <div class="image" style="background-color:#c0c;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-              <div class="slide-select" data-index="4">
-                <div class="background">
-                  <div class="image" style="background-color:#cc0;"></div>
-                </div>
-                <div class="overlay">
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </body>
