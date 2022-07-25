@@ -1,16 +1,17 @@
-<svg version="1.1" width="500" height="500" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500" viewBox="0 0 100 100">
   <title>Logo of leafal.io</title>
   <desc>Second draft of the new leafal.io logo, designed by Morgan Hofmann, July 8th 2022. Copyright (c) 2022 leafal.io All Rights Reserved.</desc>
 
-  <image width="100" height="100" x="0" y="-2" href="./leafal.png" />
-  <path d="
-    M 35 10,
-    c 30 0 25 45 65 45,
-    q -10 35 -50 35,
-    q -50 -5 -50 -45,
-    q 0 -15 10 -15,
-    c 30 0 25 45 65 35,
-    c -30 0 -25 -45 -62.5 -45,
-    c 0 0 7.5 -10 22.5 -10,
-    z" stroke="" stroke-width="1" stroke-linecap="round" fill="#3DAD2C" />
+  <g>
+    <path d="
+      M 35,10
+      c 30,0 25,45 65,45
+      q -10,35 -50,35
+      c -35,0 -50,-30 -50,-45
+      q 0,-15 10,-15
+      c 30,0 25,45 65,35
+      c -30,0 -25,-45 -62.5,-45
+      c 0,0 7.5,-10 22.5,-10
+      z" fill="#3DAD2C"/>
+  </g>
 </svg>
